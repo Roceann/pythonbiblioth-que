@@ -1,12 +1,12 @@
 import jsonpickle
 
 class Livre:
-    def __init__(self, id, titre, auteur, image, contenue):
+    def __init__(self, id, titre, ):
         self.__id = id
         self.__titre = titre
-        self.__auteur = auteur
-        self.__image = image
-        self.__contenue = contenue
+        self.__auteur = input("Entrez l'auteur: ")
+        self.__image = input("Entrez l'image : ")
+        self.__contenue = input("Entrez le contenue: ")
 
     def delete(self):
         self.__id = None
@@ -96,7 +96,7 @@ def process_truc():
             print("id : ", livre.get_id(), "titre : ", livre.get_titre(), "auteur : ", livre.get_auteur(), "image : ", livre.get_image(), "contenue : ", livre.get_contenue())
 
     elif input_user.startswith("al"):
-        livre = Livre(bibliotheque.get_last_id(), input_user[3:], "auteur", "image", "contenue")
+        livre = Livre(bibliotheque.get_last_id(), input_user[3:])
         bibliotheque.add_livre(livre)
 
     elif input_user.startswith("vl"):
